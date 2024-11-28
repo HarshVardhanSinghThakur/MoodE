@@ -1,23 +1,64 @@
-import logo from './logo.svg';
+import React, { useRef } from 'react';
 import './App.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import EmotionDetector from './components/EmotionDetector';
+import FaceDetector from './components/FaceDetector';
 
 function App() {
+  // Create a ref for the EmotionDetector component
+  const emotionDetectorRef = useRef(null);
+
+  // Function to scroll to the EmotionDetector component
+  const scrollToEmotionDetector = () => {
+    emotionDetectorRef.current.scrollIntoView({
+      behavior: 'smooth', // Smooth scroll effect
+      block: 'start',     // Scroll to the top of the element
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-grow">
+        <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-12">
+          <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            {/* Left Side (Text Content) */}
+            <section className="w-full md:w-1/2 mb-6 md:mb-0">
+            <h1 className="text-6xl font-bold mb-4 ml-5">MoodE</h1>
+              <h1 className="text-4xl font-bold mb-4 ml-5">Real-Time Face Analysis AI</h1>
+              <p className="text-lg text-gray-400 mb-6 ml-5">
+                Explore MoodE's Advanced Face Analysis AI
+              </p>
+              <div className="mt-6">
+                <button
+                  onClick={scrollToEmotionDetector} // Scroll to Emotion Detector
+                  className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mr-4 ml-5"
+                >
+                  Try Demo
+                </button>
+                
+              </div>
+            </section>
+
+            {/* Right Side (Phone Mockup) */}
+            <div className="w-full md:w-1/2 flex justify-center mr-12 md:block" >
+              <img
+                src="/Phone2.png" // Path to phone image
+                alt="Phone Mockup"
+                className="max-w-full h-auto md:max-w-md"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Emotion Detector Component */}
+        <div ref={emotionDetectorRef}>
+          
+          <EmotionDetector />
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 }

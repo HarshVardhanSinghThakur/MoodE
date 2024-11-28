@@ -2,8 +2,9 @@
   text-align: center;
 }
 
+/* Adjust the phone mockup size */
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;  /* Reduced from 40vmin */
   pointer-events: none;
 }
 
@@ -35,4 +36,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+/* App.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.md\\:max-w-md {
+  max-width: 24rem; /* 384px */
 }
