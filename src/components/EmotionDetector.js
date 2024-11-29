@@ -88,7 +88,7 @@ const EmotionDetector = () => {
     return new Blob([ab], { type: mimeString });
   };
 
-  // Helper function to get the highest scored label
+  
   const getHighestScoredLabel = (resultObj) => {
     return Object.entries(resultObj).reduce((a, b) => (b[1] > a[1] ? b : a))[0];
   };

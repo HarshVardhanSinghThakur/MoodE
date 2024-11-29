@@ -10,11 +10,11 @@ function App() {
   // Create a ref for the EmotionDetector component
   const emotionDetectorRef = useRef(null);
 
-  // Function to scroll to the EmotionDetector component
+  
   const scrollToEmotionDetector = () => {
     emotionDetectorRef.current.scrollIntoView({
-      behavior: 'smooth', // Smooth scroll effect
-      block: 'start',     // Scroll to the top of the element
+      behavior: 'smooth', 
+      block: 'start',     
     });
   };
 
@@ -24,7 +24,6 @@ function App() {
       <main className="flex-grow">
         <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-12">
           <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-            {/* Left Side (Text Content) */}
             <section className="w-full md:w-1/2 mb-6 md:mb-0">
             <h1 className="text-6xl font-bold mb-4 ml-5">MoodE</h1>
               <h1 className="text-4xl font-bold mb-4 ml-5">Real-Time Face Analysis AI</h1>
@@ -33,7 +32,7 @@ function App() {
               </p>
               <div className="mt-6">
                 <button
-                  onClick={scrollToEmotionDetector} // Scroll to Emotion Detector
+                  onClick={scrollToEmotionDetector} 
                   className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mr-4 ml-5"
                 >
                   Try Demo
@@ -42,10 +41,10 @@ function App() {
               </div>
             </section>
 
-            {/* Right Side (Phone Mockup) */}
+            
             <div className="w-full md:w-1/2 flex justify-center mr-12 md:block" >
               <img
-                src="/Phone2.png" // Path to phone image
+                src="/Phone2.png"
                 alt="Phone Mockup"
                 className="max-w-full h-auto md:max-w-md"
               />
@@ -53,7 +52,7 @@ function App() {
           </div>
         </div>
 
-        {/* Emotion Detector Component */}
+        
         <div ref={emotionDetectorRef}>
           
           <EmotionDetector />
