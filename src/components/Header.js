@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ActivityIcon, BarChartIcon, Menu, X, WandSparklesIcon, MessageCircleHeartIcon, LucideBookText } from 'lucide-react';
+import { Menu, X, WandSparklesIcon, MessageCircleHeartIcon, LucideBookText } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

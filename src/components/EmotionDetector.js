@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { ImagePlus, Camera, Upload, CheckCircle, RefreshCcw, XCircle, Loader } from 'lucide-react';
+import { ImagePlus, Camera, Upload, CheckCircle, RefreshCcw, Loader } from 'lucide-react';
 import axios from 'axios';
 import { Radar } from 'react-chartjs-2';
 import 'chart.js/auto';
@@ -32,7 +32,7 @@ const EmotionDetector = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('https:mood-e-backend-production.up.railway.app/api/analyze-face', formData, {
+      const response = await axios.post('https://mood-e-backend-production.up.railway.app/api/analyze-face', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },
