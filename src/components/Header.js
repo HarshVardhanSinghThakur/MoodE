@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ActivityIcon, BarChartIcon, Menu, X } from 'lucide-react';
+import { ActivityIcon, BarChartIcon, Menu, X, WandSparklesIcon, MessageCircleHeartIcon, LucideBookText } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,12 +14,16 @@ const Header = () => {
         <img src="/image.png" alt="MoodMe Logo" className="h-12 w-14" />
       </div>
       <nav className="hidden md:flex space-x-4">
-        <a href="#" className="hover:text-blue-400 flex items-center text-white">
-          <ActivityIcon className="mr-2" size={20} /> Emotion Detection
+        <a href="https://github.com/HarshVardhanSinghThakur" className="hover:text-blue-400 flex items-center text-white">
+          <WandSparklesIcon className="mr-2" size={20} /> Projects
         </a>
         <a href="#" className="hover:text-blue-400 flex items-center text-white">
-          <BarChartIcon className="mr-2" size={20} /> Analytics
+          <LucideBookText className="mr-2" size={20} />Docs
         </a>
+        <a href="https://www.linkedin.com/in/harsh-vardhan-singh-b6181a249/" className="hover:text-blue-400 flex items-center text-white">
+          <MessageCircleHeartIcon className="mr-2" size={20} />Contact
+        </a>
+        
       </nav>
       <div className="md:hidden flex items-center">
         <button onClick={toggleMenu} className="focus:outline-none text-white">
@@ -28,12 +32,16 @@ const Header = () => {
       </div>
       {isMenuOpen && (
         <div className="absolute top-16 right-0 w-48 bg-black bg-opacity-97 shadow-glass backdrop-blur-md flex flex-col items-center space-y-4 p-4 rounded-lg z-10">
-          <a href="#" className="hover:text-blue-400 flex items-center text-white">
-            <ActivityIcon className="mr-2" size={20} /> Emotion Detection
+          <a href="https://github.com/HarshVardhanSinghThakur" className="hover:text-blue-400 flex items-center text-white">
+            <WandSparklesIcon className="mr-2" size={20} />Projects
           </a>
           <a href="#" className="hover:text-blue-400 flex items-center text-white">
-            <BarChartIcon className="mr-2" size={20} /> Analytics
+            <LucideBookText className="mr-2" size={20} />Docs
           </a>
+          <a href="https://www.linkedin.com/in/harsh-vardhan-singh-b6181a249/" className="hover:text-blue-400 flex items-center text-white">
+            <MessageCircleHeartIcon className="mr-2" size={20} />Contact
+          </a>
+
         </div>
       )}
     </header>

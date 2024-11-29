@@ -32,7 +32,7 @@ const EmotionDetector = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('http://192.168.1.40:5000/api/analyze-face', formData, {
+      const response = await axios.post('https:mood-e-backend-production.up.railway.app/api/analyze-face', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },

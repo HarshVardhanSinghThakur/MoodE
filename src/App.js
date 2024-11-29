@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import EmotionDetector from './components/EmotionDetector';
+
 import FaceDetector from './components/FaceDetector';
 
 function App() {
