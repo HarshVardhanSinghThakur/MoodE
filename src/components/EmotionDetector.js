@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { ImagePlus, Camera, Upload, CheckCircle, RefreshCcw, Loader } from 'lucide-react';
+import { ImagePlus, Camera, Upload, CheckCircle,XCircle , RefreshCcw, Loader } from 'lucide-react';
 import axios from 'axios';
 import { Radar } from 'react-chartjs-2';
 import 'chart.js/auto';
@@ -88,7 +88,7 @@ const EmotionDetector = () => {
     return new Blob([ab], { type: mimeString });
   };
 
-  
+
   const getHighestScoredLabel = (resultObj) => {
     return Object.entries(resultObj).reduce((a, b) => (b[1] > a[1] ? b : a))[0];
   };
@@ -211,10 +211,14 @@ const EmotionDetector = () => {
                     {getHighestScoredLabel(results.age)}
                   </p>
                 </div>
-                <div className="bg-gray-700 p-4 rounded-lg ">
-                  <h4 className="text-gray-300 mb-1 text-center">Mask</h4>
-                  <p className="text-white font-bold    ">
-                    {getHighestScoredLabel(results.mask)}
+                <div className="bg-gray-700 p-4 rounded-lg  ">
+                  <h4 className="text-gray-300 mb-2 text-center ">Mask</h4>
+                  <p className="text-white font-bold flex justify-center items-center">
+                    {getHighestScoredLabel(results.mask) === "WithMask" ? (
+                      <CheckCircle className=" text-green-500 h-6 w-6" />
+                    ) : (
+                      <XCircle className="  text-red-500 h-6 w-6" />
+                    )}
 
                   </p>
                 </div>
